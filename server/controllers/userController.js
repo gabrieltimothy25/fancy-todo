@@ -1,8 +1,10 @@
 const User = require('../models/user')
+const ObjectID = require('mongoose').Types.ObjectId
 module.exports = {
     getUsers(req, res, next) {
         User.find().populate('todos')
             .then(data => {
+                console.log(data)
                 res.status(200).json({ data })
             })
             .catch(err => {
@@ -24,8 +26,7 @@ module.exports = {
         User.create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
-            todos: []
+            password: req.body.password
         })
             .then(data => {
                 res.status(201).json({ data })
@@ -36,7 +37,7 @@ module.exports = {
             })
     },
     updateUser(req, res, next) {
-        User.updateOne({ _id: req.params.id}, {
+        User.updateOne({ _id: ObjectID(req.params.id)}, {
             username: req.body.username,
             password: req.body.password
         })
@@ -49,9 +50,9 @@ module.exports = {
             })
     },
     deleteUser(req, res, next) {
-        User.deleteOne({ _id: req.params.id})
+        User.deleteOne({ _id: ObjectID(req.params.id)})
             .then(result => {
-                res.status(204).json({ result })
+                res.status(200).json({ result })
             })
             .catch(err => {
                 console.log(err.message)

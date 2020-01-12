@@ -8,7 +8,7 @@ const routes = require('./routes/index.js')
 require('./models/user')
 require('./models/todo')
 
-mongoose.connect('mongodb://localhost/fancy-todo', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/fancyTodoApp', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

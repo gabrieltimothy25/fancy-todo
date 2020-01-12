@@ -9,6 +9,6 @@ const todoSchema = new Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User'}
 })
 
-const Todo = mongoose.model('Todo', todoSchema)
+const Todo = mongoose.model('Todo', todoSchema  )
 
 module.exports = Todo
