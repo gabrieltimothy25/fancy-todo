@@ -12,22 +12,8 @@ router.get('/:id', controller.getOneUser)
 
 router.post('/google-sign-in', controller.googleSignIn)
 
-router.put('/:id', authentication, (req, res, next) => {
-    if (req.params.id === req.currentUserId) {
-        next()
-    } else {
-        console.log(err.message)
-        next(err)
-    }
-}, controller.updateUser)
+router.put('/:id', authentication, controller.updateUser)
 
-router.delete('/:id', (req, res, next) => {
-    if (req.params.id === req.currentUserId) {
-        next()
-    } else {
-        console.log(err.message)
-        next(err)
-    }
-}, controller.deleteUser)
+router.delete('/:id', authentication, controller.deleteUser)
 
 module.exports = router;

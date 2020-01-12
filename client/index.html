@@ -20,9 +20,9 @@
                 <li>
                     <div class="user-view">
                         <div class="background">
-                            <img src="images/office.jpg">
+                            <!-- <img src="images/office.jpg"> -->
                         </div>
-                        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+                        <!-- <a href="#!user"><img class="circle" s></a> -->
                         <a href="#!name"><span class="white-text name">John Doe</span></a>
                         <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
@@ -70,7 +70,7 @@
                             </button>
                             <div class="row">
                                 <center>
-                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                    <div class="g-signin2" data-onsuccess="onSignIn" id="sign-in-btn"></div>
                                 </center>
                             </div>
                         </form>
@@ -109,59 +109,48 @@
             <div class='container' id='heading-stats'>
                 <div class="col s12 m7">
                     <div class="card horizontal">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                        <p>Welcome! How was your day? Have you made something up? You can't just be lying idle there.</p>
-                        </div>
-                        <div class="card-action">
-                            <center>
-                            <div class='row'>
-                                <div class='col s3'>
-                                    <a href='#' class='stats'>11</a>
-                                </div>
-                                <div class='col s3'>
-                                    <a href='#' class='stats'>8</a>
-                                </div>
-                                <div class='col s3'>
-                                    <a href='#' class='stats'>9</a>
-                                </div>
-                                <div class='col s3'>
-                                    <a href='#' class='stats'>21</a>
-                                </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                            <p>Welcome! How was your day? Have you made something up? You can't just be lying idle there.</p>
                             </div>
-                            <div class='row' id='timedue'>
-                                <div class='col s3' >
-                                    <h5 class='status'>Overdue</h5>
+                            <div class="card-action">
+                                <center>
+                                <div class='row'>
+                                    <div class='col s3' id='overdue'>
+                                        <!-- <a href='#' class='stats'>11</a> -->
+                                    </div>
+                                    <div class='col s3' id='todo'>
+                                        <!-- <a href='#' class='stats'>8</a> -->
+                                    </div>
+                                    <div class='col s3' id='due-today'>
+                                        <!-- <a href='#' class='stats'>9</a> -->
+                                    </div>
+                                    <div class='col s3'  id='completed'>
+                                        <!-- <a href='#' class='stats'>21</a> -->
+                                    </div>
                                 </div>
-                                <div class='col s3' >
-                                    <h5 class='status'>To do</h5>
+                                <div class='row' id='timedue'>
+                                    <div class='col s3' >
+                                        <h5 class='status'>Overdue</h5>
+                                    </div>
+                                    <div class='col s3' >
+                                        <h5 class='status'>To do</h5>
+                                    </div>
+                                    <div class='col s3' >
+                                        <h5 class='status'>Due Today</h5>
+                                    </div>
+                                    <div class='col s3' >
+                                        <h5 class='status'>Completed</h5>
+                                    </div>
                                 </div>
-                                <div class='col s3' >
-                                    <h5 class='status'>Due Today</h5>
-                                </div>
-                                <div class='col s3' >
-                                    <h5 class='status'>Completed</h5>
-                                </div>
+                                </center>
                             </div>
-                            </center>
                         </div>
-                    </div>
                     </div>
                 </div>
                 <br>
                 <h6>Due Today</h6>
                 <hr>
-                <div class="card">
-                    <div class="card-content white-text todo-card">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
@@ -177,5 +166,6 @@
             $('.tabs').tabs();
         });
     </script>
+    <script src='./assets/js/main.js'></script>
 </body>
 </html>

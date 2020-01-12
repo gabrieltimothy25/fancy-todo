@@ -64,6 +64,7 @@ module.exports = {
             })
     },
     googleSignIn(req, res, next) {
+        console.log('masuk')
         let userData = null;
         client.verifyIdToken({
             idToken: req.body.google_token,
