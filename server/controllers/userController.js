@@ -17,7 +17,17 @@ module.exports = {
             })
     },
     getOneUser(req, res, next) {
-        User.findById(req.params.id).populate('todos')
+        User.findById(req.params.id)
+            .then(data => {
+                res.status(200).json({ data })
+            })
+            .catch(err => {
+                console.log(err.message)
+                next(err)
+            })
+    },
+    getCurrentUser(req, res, next) {
+        User.findById(req.currentUserId)
             .then(data => {
                 res.status(200).json({ data })
             })
@@ -28,7 +38,7 @@ module.exports = {
     },
     createUser(req, res, next) {
         User.create({
-            username: req.body.username,
+            username: req.body.name,
             email: req.body.email,
             password: req.body.password
         })
@@ -64,7 +74,6 @@ module.exports = {
             })
     },
     googleSignIn(req, res, next) {
-        console.log('masuk')
         let userData = null;
         client.verifyIdToken({
             idToken: req.body.google_token,

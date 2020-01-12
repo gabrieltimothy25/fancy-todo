@@ -19,19 +19,13 @@
             <ul id="slide-out" class="sidenav">
                 <li>
                     <div class="user-view">
-                        <div class="background">
-                            <!-- <img src="images/office.jpg"> -->
-                        </div>
-                        <!-- <a href="#!user"><img class="circle" s></a> -->
-                        <a href="#!name"><span class="white-text name">John Doe</span></a>
-                        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
                 </li>
-                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
                 <li><a href="#!">Second Link</a></li>
                 <li><div class="divider"></div></li>
                 <li><a class="subheader">Subheader</a></li>
-                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li> -->
                 <li><a href="#" onclick="signOut();" id='sign-out-btn'>Sign out</a></li>
             </ul>
             <a href="#" data-target="slide-out" class="sidenav-trigger disabled" id='menu-nav-btn'><i class="material-icons" id="nav-access">menu</i></a>
@@ -40,7 +34,7 @@
             <h1>What-to-do</h1>
         </div>
         <div class='inline' id='add-btn-container'>
-            <a href="#" class='disabled'><i class="material-icons" id='new-task-btn'>add</i></a>
+            <button class="black btn waves-effect waves-light" type="submit" name="action" id='new-task-btn'l><i class="material-icons">add</i></button>
         </div>
         <div class='container center' id='signup'>
             <div class="card-panel" id='card-signup'>
@@ -149,8 +143,33 @@
                     </div>
                 </div>
                 <br>
-                <h6>Due Today</h6>
+                <h6>Due/Still Pending</h6>
                 <hr>
+            </div>
+            <div id="new-task" class="col s12" style='display: none'>
+                <form class="col s12" style='margin-top: 50px;'>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="taskname" type="text" class="validate">
+                        <label for="taskname">Username</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="description" type="text" class="validate">
+                        <label for="description">Description</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="due" type="date" class="validate">
+                        <label for="due">Email</label>
+                      </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id='submit-task'>Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
             </div>
         </div>
     </main>

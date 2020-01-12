@@ -20,7 +20,7 @@ function onSignIn(googleUser) {
                     $('#menu-nav-btn').remove()
                     $('#new-task-btn').remove()
                     $('#navbtn').append(`<a href="#" data-target="slide-out" class="sidenav-trigger" id='menu-nav-btn'><i class="material-icons" id="nav-access">menu</i></a>`)
-                    $('#add-btn-container').append(`<a href="#"><i class="material-icons" id='new-task-btn'>add</i></a>`)
+                    $('#add-btn-container').append(`<button class="black btn waves-effect waves-light" type="submit" name="action" id='new-task-btn'><i class="material-icons">add</i></button>`)
                     $('#signup').hide()
                     $('main').show()
                     let overdue = 0;
@@ -56,6 +56,25 @@ function onSignIn(googleUser) {
                 .fail(err => {
                     console.log(err.message)
                 })
+            $.ajax({
+                method: 'GET',
+                url: `http://localhost:3000/users/current`,
+                headers: {
+                    access_token: localStorage.getItem('access_token')
+                }
+            })
+                .done(data => {
+                    $('.user-view').append(`
+                    <div class="background">
+                        <img src="./assets/images/cafeBG.jpg">
+                    </div>
+                    <a href="#!name"><span class="white-text name">${data.data.username}</span></a>
+                    <a href="#!email"><span class="white-text email">${data.data.email}</span></a>
+                    `)
+                })
+                .fail(err => {
+                    console.log(err)
+                })
         })
         .fail(err => {
             console.log(err.message)
@@ -69,7 +88,41 @@ function signOut() {
       $('#menu-nav-btn').remove()
       $('#new-task-btn').remove()
       $('#navbtn').append(`<a href="#" data-target="slide-out" class="sidenav-trigger disabled" id='menu-nav-btn'><i class="material-icons" id="nav-access">menu</i></a>`)
-      $('#add-btn-container').append(`<a href="#" class='disabled'><i class="material-icons" id='new-task-btn'>add</i></a>`)
+      $('#add-btn-container').append(`<button class="black btn waves-effect waves-light" type="submit" name="action" id='new-task-btn'l><i class="material-icons">add</i></button>`)
       $('#signup').show()
+      $('main').hide()
     });
 }
+
+
+$(document).ready(function() {
+    $('#new-task-btn').click(function(event) {
+        console.log('masuk')
+        event.preventDefault()
+        $('main').hide()
+        $('#new-task').show()
+    })
+
+    $('#submit-task').click(function(event) {
+        event.preventDefault()
+        $.ajax({
+            method: 'POST',
+            url: `http://localhost:3000/todos`,
+            headers: {
+                access_token: localStorage.getItem('access_token')
+            },
+            data: {
+                name: $('#taskName').val(),
+                description: $('#description').val(),
+                due_date: $('#due').val(),
+            }
+        })
+            .done(result => {
+                $('main').show()
+                $('#new-task').hide()
+            })
+            .fail(err => {
+                console.log(err);
+            })
+    })
+})

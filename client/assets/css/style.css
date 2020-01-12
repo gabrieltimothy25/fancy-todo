@@ -29,7 +29,7 @@ header h1{
     font-size: 50px;
 }
 
-#new-task-btn {
+.material-icons {
     font-size: 50px;
     color: white;
 }

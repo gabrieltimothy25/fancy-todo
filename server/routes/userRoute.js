@@ -6,6 +6,8 @@ const authentication = require('../middlewares/authentication')
 
 router.get('/', controller.getUsers)
 
+router.get('/current', authentication, controller.getCurrentUser)
+
 router.post('/', controller.createUser)
 
 router.get('/:id', controller.getOneUser)
