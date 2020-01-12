@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Raleway|Roboto+Mono|Source+Sans+Pro|Ubuntu&display=swap" rel="stylesheet">
+    <title>What-to-do App</title>
+</head>
+<body>
+    <header>
+        <div class='inline' id='navbtn'>
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="images/office.jpg">
+                        </div>
+                        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+                        <a href="#!name"><span class="white-text name">John Doe</span></a>
+                        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                    </div>
+                </li>
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" id="nav-access">menu</i></a>
+        </div>
+        <div class='inline' id='title'>
+            <h1>What-to-do</h1>
+        </div>
+        <div class='inline' id='add-btn-container'>
+            <a href="#"><i class="material-icons" id='new-task-btn'>add</i></a>
+        </div>
+    </header>
+    <main>
+        <div class='container'id='todos-list'>
+            <div class='container' id='heading-stats'>
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                        <p>Welcome! How was your day? Have you made something up? You can't just be lying idle there.</p>
+                        </div>
+                        <div class="card-action">
+                            <center>
+                            <div class='row'>
+                                <div class='col s3'>
+                                    <a href='#' class='stats'>11</a>
+                                </div>
+                                <div class='col s3'>
+                                    <a href='#' class='stats'>8</a>
+                                </div>
+                                <div class='col s3'>
+                                    <a href='#' class='stats'>9</a>
+                                </div>
+                                <div class='col s3'>
+                                    <a href='#' class='stats'>21</a>
+                                </div>
+                            </div>
+                            <div class='row' id='timedue'>
+                                <div class='col s3' >
+                                    <h5 class='status'>Overdue</h5>
+                                </div>
+                                <div class='col s3' >
+                                    <h5 class='status'>To do</h5>
+                                </div>
+                                <div class='col s3' >
+                                    <h5 class='status'>Due Today</h5>
+                                </div>
+                                <div class='col s3' >
+                                    <h5 class='status'>Completed</h5>
+                                </div>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <br>
+                <h6>Due Today</h6>
+                <hr>
+                <div class="card">
+                    <div class="card-content white-text todo-card">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
+</body>
+</html>
