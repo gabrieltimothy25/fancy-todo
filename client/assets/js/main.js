@@ -47,6 +47,11 @@ function onSignIn(googleUser) {
                             </div>
                             `)
                         })
+                    } else {
+                        $('#heading-stats').append(`
+                        <center><img src='./assets/images/todo.png' style='margin-top:150px'; height=300 width=300></center>
+                        `)
+
                     }
                     $('#overdue').append(`<a href='#' class='stats'>${overdue}</a>`)
                     $('#todo').append(`<a href='#' class='stats'>${todo}</a>`)
