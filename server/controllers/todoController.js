@@ -2,7 +2,9 @@ const Todo = require('../models/todo')
 const ObjectID = require('mongoose').Types.ObjectId
 module.exports = {
     getTodos(req, res, next) {
-        Todo.find().populate('userId')
+        Todo.find({
+            userId: ObjectID(req.currentUserId) 
+        })
             .then(data => {
                 res.status(200).json({ data })
             })

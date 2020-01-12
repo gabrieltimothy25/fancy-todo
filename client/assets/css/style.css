@@ -14,7 +14,7 @@ body {
 } */
 .inline h1{
     text-align: center;
-    margin-left: 510px;
+    margin-left: 524px;
 }
 header h1{
     color: white;
@@ -74,3 +74,38 @@ header h1{
 .todo-card {
     background-image: url("../images/BlueGreenBG.jpg");
 }
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+#signup {
+    margin-top: 100px;
+}
+
+#card-signup {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.g-signin2 {
+    margin-top: 50px;
+}
+
+.tabs .tab a{
+    color:#000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:lightgray;
+    color:#000;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#000;
+} /*Color of underline*/
