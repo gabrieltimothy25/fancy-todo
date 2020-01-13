@@ -101,11 +101,6 @@ function signOut() {
 
 
 $(document).ready(function() {
-    $('#new-task-btn').click(function(event) {
-        event.preventDefault()
-        $('main').hide()
-        $('#new-task').show()
-    })
     $("#new-task-btn").on("click", function(){
         $('main').hide()
         $('#new-task').show()
