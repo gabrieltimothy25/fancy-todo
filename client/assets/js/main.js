@@ -102,11 +102,14 @@ function signOut() {
 
 $(document).ready(function() {
     $('#new-task-btn').click(function(event) {
-        console.log('masuk')
         event.preventDefault()
         $('main').hide()
         $('#new-task').show()
     })
+    $("#new-task-btn").on("click", function(){
+        $('main').hide()
+        $('#new-task').show()
+    });
 
     $('#submit-task').click(function(event) {
         event.preventDefault()

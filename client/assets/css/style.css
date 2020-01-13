@@ -109,3 +109,7 @@ header h1{
 .tabs .indicator {
     background-color:#000;
 } /*Color of underline*/
+
+#new-task-btn {
+    color: white
+}
