@@ -8,7 +8,7 @@ const routes = require("./routes/");
 mongoose.connect(
   "mongodb://localhost/fancy-todo",
   {
-    useFindAndModify: true,
+    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true
   },

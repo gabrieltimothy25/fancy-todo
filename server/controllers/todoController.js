@@ -21,6 +21,7 @@ module.exports = {
       .catch(next);
   },
   editTodo(req, res, next) {
+    console.log(req.params.todoId);
     const { title, description, due } = req.body;
     Todo.findByIdAndUpdate(
       req.params.todoId,
