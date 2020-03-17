@@ -10,8 +10,7 @@ module.exports = (req, res, next) => {
         if (!user) {
           next({
             name: "Authentication Error",
-            code: 403,
-            message: messages.INVALID_TOKEN
+            code: 403
           });
         } else {
           req.currentUserId = decoded._id;

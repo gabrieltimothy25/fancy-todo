@@ -10,8 +10,7 @@ module.exports = {
         if (user) {
           next({
             name: "Duplicate Error",
-            code: 400,
-            message: messages.DUPLICATE_USERNAME
+            code: 400
           });
         } else {
           return User.create({
@@ -36,15 +35,13 @@ module.exports = {
       if (!user) {
         next({
           name: "Login Error",
-          code: 400,
-          message: messages.LOGIN_ERROR
+          code: 400
         });
       } else {
         if (!bcrypt.compareSync(password, user.password)) {
           next({
             name: "Login Error",
-            code: 400,
-            message: messages.LOGIN_ERROR
+            code: 400
           });
         }
         let access_token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
