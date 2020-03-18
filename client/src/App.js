@@ -1,12 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./containers/Home";
+import Dashboard from "./containers/Dashboard";
+import SignUp from "./containers/SignUp";
+import SignIn from "./containers/SignIn";
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -21,19 +25,19 @@ export default function App() {
               <Link to="/dashboard">dashboard</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <Switch>
           <Route path="/dashboard">
-            <h1>This is dashboard</h1>
+            <Dashboard />
           </Route>
           <Route path="/signin">
-            <h1>This is signin</h1>
+            <SignIn />
           </Route>
           <Route path="/signup">
-            <h1>This is signup</h1>
+            <SignUp />
           </Route>
           <Route path="/">
-            <h1>This is Home</h1>
+            <Home />
           </Route>
         </Switch>
       </div>
