@@ -5,29 +5,28 @@ const messages = require("../config/messages");
 module.exports = {
   signup(req, res, next) {
     const { username, password } = req.body;
-    User.findOne({ username })
-      .then(user => {
-        if (user) {
-          next({
-            name: "Duplicate Error",
-            code: 400
-          });
-        } else {
-          return User.create({
-            username,
-            password
-          });
-        }
-      })
-      .then(newUser => {
-        res.status(201).json({
-          message: "User successfully created",
-          newUser
+    User.findOne({ username }).then(user => {
+      if (user) {
+        next({
+          name: "Duplicate Error",
+          code: 400
         });
-      })
-      .catch(err => {
-        next(err);
-      });
+      } else {
+        User.create({
+          username,
+          password
+        })
+          .then(newUser => {
+            res.status(201).json({
+              message: "User successfully created",
+              newUser
+            });
+          })
+          .catch(err => {
+            next(err);
+          });
+      }
+    });
   },
   signin(req, res, next) {
     const { username, password } = req.body;
