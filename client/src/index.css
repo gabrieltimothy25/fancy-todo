@@ -1,4 +1,4 @@
-#home-screen {
+.home-screens {
   background-image: url("./images/Colorful-Pencils-With-White-Background.jpeg");
   background-size: cover;
   /* Center and scale the image nicely */
@@ -72,6 +72,15 @@
   animation-iteration-count: infinite;
 }
 
+#usernameInput,
+#passwordInput {
+  width: 35rem;
+}
+
+.user-entry-container {
+  animation: fadeInOpacity ease-in-out 0.5s;
+}
+
 @keyframes mainTitleSlideUp {
   0% {
     opacity: 0.3;
@@ -80,6 +89,10 @@
   100% {
     opacity: 1;
   }
+}
+
+.submit-btn {
+  width: 100%;
 }
 
 @keyframes fadeInOpacity {

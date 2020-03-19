@@ -10,6 +10,16 @@ export default function App() {
   return (
     <Router>
       <div>
+        <div className="d-flex justify-content-center">
+          <p
+            style={{
+              position: "absolute",
+              fontSize: "15px"
+            }}
+          >
+            &copy; Gabriel Timothy | 2020
+          </p>
+        </div>
         {/* <nav>
           <ul>
             <li>
