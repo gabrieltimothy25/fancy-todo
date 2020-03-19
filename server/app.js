@@ -4,6 +4,7 @@ const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const routes = require("./routes/");
+const cors = require("cors");
 
 mongoose.connect(
   "mongodb://localhost/fancy-todo",
@@ -21,6 +22,7 @@ mongoose.connect(
   }
 );
 
+app.use(cors());
 app.use(express.urlencoded({ extended: "false" }));
 app.use(express.json());
 app.use(morgan("dev"));
