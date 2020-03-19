@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 export default function UserEntry() {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,8 +17,10 @@ export default function UserEntry() {
         password
       }
     })
-      .then(({ data }) => {
-        console.log(data);
+      .then(_ => {
+        setUsername("");
+        setPassword("");
+        history.push("/signin");
       })
       .catch(console.log);
   };
